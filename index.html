@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Tip Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e9f5f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+    }
+
+    h1 {
+      color: #2d6a4f;
+    }
+
+    .tip-box {
+      font-size: 1.2rem;
+      margin: 20px 0;
+      color: #333;
+    }
+
+    .timestamp {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: #2d6a4f;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1b4332;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🌿 Health Tip Generator</h1>
+  <div class="tip-box" id="tip">Press the button to get a health tip!</div>
+  <div class="timestamp" id="timestamp"></div>
+  <button onclick="showTip()">🔁 New Tip</button>
+</div>
+
+<script>
+  const tips = [
+    "Drink at least 8 glasses of water a day.",
+    "Get 7-9 hours of sleep each night.",
+    "Incorporate at least 30 minutes of physical activity into your day.",
+    "Eat a balanced diet rich in fruits and vegetables.",
+    "Take short breaks if you sit for long periods.",
+    "Avoid processed foods and sugary drinks.",
+    "Practice mindful eating and avoid overeating.",
+    "Get regular medical checkups.",
+    "Wash your hands regularly to prevent illness.",
+    "Spend time outdoors for fresh air and vitamin D.",
+    "Stretch regularly to improve flexibility and circulation.",
+    "Avoid smoking and limit alcohol consumption.",
+    "Practice deep breathing or meditation to reduce stress.",
+    "Maintain a good posture while sitting or standing.",
+    "Limit screen time and take eye breaks every 20 minutes."
+  ];
+
+  function showTip() {
+    const tip = tips[Math.floor(Math.random() * tips.length)];
+    const now = new Date();
+    const formattedTime = now.toLocaleString();
+
+    document.getElementById('tip').textContent = `💡 ${tip}`;
+    document.getElementById('timestamp').textContent = `🕒 ${formattedTime}`;
+  }
+</script>
+
+</body>
+</html>
